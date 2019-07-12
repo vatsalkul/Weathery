@@ -12,6 +12,11 @@
 		465B30D922D8C1560006E594 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465B30D722D8C1560006E594 /* Main.storyboard */; };
 		465B30DB22D8C1590006E594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465B30DA22D8C1590006E594 /* Assets.xcassets */; };
 		465B30DE22D8C1590006E594 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465B30DC22D8C1590006E594 /* LaunchScreen.storyboard */; };
+		465B30E722D8C9630006E594 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465B30E622D8C9630006E594 /* CoreLocation.framework */; };
+		465B30ED22D915360006E594 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 465B30E922D915350006E594 /* rain.mp3 */; };
+		465B30EE22D915360006E594 /* drizzle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 465B30EA22D915350006E594 /* drizzle.mp3 */; };
+		465B30EF22D915360006E594 /* wind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 465B30EB22D915360006E594 /* wind.mp3 */; };
+		465B30F022D915360006E594 /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 465B30EC22D915360006E594 /* thunder.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		465B30DA22D8C1590006E594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		465B30DD22D8C1590006E594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		465B30DF22D8C1590006E594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465B30E622D8C9630006E594 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		465B30E922D915350006E594 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		465B30EA22D915350006E594 /* drizzle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drizzle.mp3; sourceTree = "<group>"; };
+		465B30EB22D915360006E594 /* wind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wind.mp3; sourceTree = "<group>"; };
+		465B30EC22D915360006E594 /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465B30E722D8C9630006E594 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,7 @@
 			children = (
 				465B30D222D8C1560006E594 /* WeatherAPP */,
 				465B30D122D8C1560006E594 /* Products */,
+				465B30E522D8C9620006E594 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +72,28 @@
 				465B30DA22D8C1590006E594 /* Assets.xcassets */,
 				465B30DC22D8C1590006E594 /* LaunchScreen.storyboard */,
 				465B30DF22D8C1590006E594 /* Info.plist */,
+				465B30E822D9151F0006E594 /* Music */,
 			);
 			path = WeatherAPP;
+			sourceTree = "<group>";
+		};
+		465B30E522D8C9620006E594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				465B30E622D8C9630006E594 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		465B30E822D9151F0006E594 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				465B30EA22D915350006E594 /* drizzle.mp3 */,
+				465B30E922D915350006E594 /* rain.mp3 */,
+				465B30EC22D915360006E594 /* thunder.mp3 */,
+				465B30EB22D915360006E594 /* wind.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +154,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465B30EF22D915360006E594 /* wind.mp3 in Resources */,
+				465B30ED22D915360006E594 /* rain.mp3 in Resources */,
 				465B30DE22D8C1590006E594 /* LaunchScreen.storyboard in Resources */,
 				465B30DB22D8C1590006E594 /* Assets.xcassets in Resources */,
 				465B30D922D8C1560006E594 /* Main.storyboard in Resources */,
+				465B30F022D915360006E594 /* thunder.mp3 in Resources */,
+				465B30EE22D915360006E594 /* drizzle.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
