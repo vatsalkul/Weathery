@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import CoreLocation
+import SwiftVideoBackground
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var thunderSound = AVAudioPlayer()
     var windSound = AVAudioPlayer()
     
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
@@ -132,16 +134,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         switch weather {
         case "Rain":
             rainSound.play()
-            rainSound.numberOfLoops = 3
+            rainSound.numberOfLoops = -1
+            try? VideoBackground.shared.play(view: videoView, videoName: "Rain_anim", videoType: "mov")
         case "Thunderstorm":
+            try? VideoBackground.shared.play(view: videoView, videoName: "Thunder_anim", videoType: "mov")
             thunderSound.play()
-            thunderSound.numberOfLoops = 3
+            thunderSound.numberOfLoops = -1
         case "Drizzle":
+            try? VideoBackground.shared.play(view: videoView, videoName: "Rain_anim", videoType: "mov")
             drizzleSound.play()
-            thunderSound.numberOfLoops = 3
+            drizzleSound.numberOfLoops = -1
         default:
+            try? VideoBackground.shared.play(view: videoView, videoName: "Cloud_anim", videoType: "mov")
             windSound.play()
-            windSound.numberOfLoops = 3
+            windSound.numberOfLoops = -1
         }
     }
     
@@ -151,11 +157,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         
-        if hour >= 6 && hour <= 18 {
+        if hour >= 6 && hour <= 11 {
+            self.skyImageView.image = UIImage(named: "morningSky")
+        }
+        else if hour >= 12 && hour <= 16 {
             self.skyImageView.image = UIImage(named: "sunSky")
         }
+        else if hour >= 17 && hour <= 19 {
+            self.skyImageView.image = UIImage(named: "duskSky")
+        }
+        else if hour >= 20 && hour <= 23 {
+            self.skyImageView.image = UIImage(named: "nightSky")
+        }
         else {
-            self.skyImageView.image = UIImage(named: "sunSky")
+            self.skyImageView.image = UIImage(named: "midnightSky")
         }
     }
     
