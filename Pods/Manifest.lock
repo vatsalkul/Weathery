@@ -1,0 +1,16 @@
+PODS:
+  - SwiftVideoBackground (3.2.0)
+
+DEPENDENCIES:
+  - SwiftVideoBackground
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftVideoBackground
+
+SPEC CHECKSUMS:
+  SwiftVideoBackground: 28c37a2cb1bb6162ef179cfd9bb2b08de967b632
+
+PODFILE CHECKSUM: 55cb8d2fdbeda523db5b0f2bd5b96cfaad0a09b0
+
+COCOAPODS: 1.7.4
