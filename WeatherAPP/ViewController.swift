@@ -28,6 +28,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var skyImageView: UIImageView!
+    @IBOutlet weak var sunRiseLabel: UILabel!
+    @IBOutlet weak var sunSetLabel: UILabel!
     
     var latitude:String = ""
     var longitude:String = ""
@@ -73,6 +75,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         minTempLabel.text = "-"
         maxTempLabel.text = "-"
         humidityLabel.text = "-"
+        sunRiseLabel.text = "-"
+        sunSetLabel.text = "-"
         
         getLocation()
         fetchData()
@@ -104,11 +108,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         let weatherSys = myJson["sys"] as? [String: Any]
                         let country = weatherSys!["country"] as? String ?? ""
                         let place = myJson["name"] as? String
+                        let sunrise = weatherSys!["sunrise"] as? Double
+                        let riseTime = self.convertUnixTime(time: sunrise!)
+                        
+                        let sunset = weatherSys!["sunset"] as? Double
+                        let setTime = self.convertUnixTime(time: sunset!)
                         
                         let description = (weatherDetails.first?["description"] as? String)?.capitalisingFirst()
                         DispatchQueue.main.async {
                             
-                            self.setLabels(weather: weatherDetails.first?["main"] as? String, description: description, temp: temp, country: country, place: place, minTemp: minTemp, maxTemp: maxTemp, humidity: humidity)
+                            self.setLabels(weather: weatherDetails.first?["main"] as? String, description: description, temp: temp, country: country, place: place, minTemp: minTemp, maxTemp: maxTemp, humidity: humidity, riseTime: riseTime, setTime: setTime)
                         }
                     }
                     catch{
@@ -122,7 +131,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func setLabels(weather: String?, description: String?, temp: Int, country: String?, place: String?, minTemp: Int, maxTemp: Int, humidity: Int){
+    func setLabels(weather: String?, description: String?, temp: Int, country: String?, place: String?, minTemp: Int, maxTemp: Int, humidity: Int, riseTime: String, setTime: String){
         countryLabel.text = country ?? "error"
         cityLabel.text = place ?? "error"
         descLabel.text = description ?? "error"
@@ -130,6 +139,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         humidityLabel.text = "Humidity:  \(humidity)%"
         minTempLabel.text = "Min. Temp:  \(minTemp-273)°C"
         maxTempLabel.text = "Max. Temp:  \(maxTemp-273)°C"
+        sunRiseLabel.text = "Sunrise: \(riseTime)"
+        sunSetLabel.text = "Sunset: \(setTime)"
         
         switch weather {
         case "Rain":
@@ -172,6 +183,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         else {
             self.skyImageView.image = UIImage(named: "midnightSky")
         }
+    }
+    
+    func convertUnixTime(time: Double) -> String{
+        let date = NSDate(timeIntervalSince1970: time)
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "hh:mm a"
+        let sunriseTime = dayTimePeriodFormatter.string(from: date as Date)
+        return sunriseTime
     }
     
     func getLocation(){

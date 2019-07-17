@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,6 +66,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="riseTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiO-8v-NUT">
+                                <rect key="frame" x="178.5" y="323" width="57.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1W-w2-Zci">
+                                <rect key="frame" x="180" y="346" width="54.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,9 +86,11 @@
                             <constraint firstItem="llH-0p-Qud" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7u5-Pt-aLw"/>
                             <constraint firstAttribute="bottom" secondItem="p2X-Zj-amo" secondAttribute="bottom" id="Dvg-FH-i2T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Svq-KV-oXn" secondAttribute="trailing" constant="10" id="EjH-iq-ONo"/>
+                            <constraint firstItem="jiO-8v-NUT" firstAttribute="top" secondItem="r6C-B8-OHc" secondAttribute="bottom" constant="5" id="Fpl-fq-V81"/>
                             <constraint firstItem="p2X-Zj-amo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GhD-yi-T1D"/>
                             <constraint firstItem="8Pe-x5-Ups" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Ghh-AD-xjd"/>
                             <constraint firstAttribute="bottom" secondItem="nQw-do-W1Q" secondAttribute="bottom" id="Hvs-B6-VSy"/>
+                            <constraint firstItem="T1W-w2-Zci" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I90-yX-juk"/>
                             <constraint firstItem="p2X-Zj-amo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M02-6g-UnN"/>
                             <constraint firstItem="nQw-do-W1Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mxf-gk-oLe"/>
                             <constraint firstItem="Svq-KV-oXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PGI-EZ-mqP"/>
@@ -86,9 +99,11 @@
                             <constraint firstItem="TSR-Ke-WM5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yfg-Yc-WNa"/>
                             <constraint firstItem="TSR-Ke-WM5" firstAttribute="top" secondItem="oHQ-4z-kub" secondAttribute="bottom" constant="10" id="YzW-j9-j7r"/>
                             <constraint firstItem="M8F-b6-n48" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yzi-xX-S4y"/>
+                            <constraint firstItem="jiO-8v-NUT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aWg-Jt-4aC"/>
                             <constraint firstItem="p2X-Zj-amo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cQd-Z2-qPf"/>
                             <constraint firstItem="Svq-KV-oXn" firstAttribute="top" secondItem="llH-0p-Qud" secondAttribute="bottom" constant="10" id="mBb-73-TOn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Svq-KV-oXn" secondAttribute="bottom" constant="40" id="mxd-8f-ghR"/>
+                            <constraint firstItem="T1W-w2-Zci" firstAttribute="top" secondItem="jiO-8v-NUT" secondAttribute="bottom" constant="5" id="pMI-3p-BgM"/>
                             <constraint firstItem="r6C-B8-OHc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pzt-0N-493"/>
                             <constraint firstItem="8Pe-x5-Ups" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uMD-MT-1sY"/>
                             <constraint firstItem="oHQ-4z-kub" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vNS-B8-Q0H"/>
@@ -104,6 +119,8 @@
                         <outlet property="maxTempLabel" destination="r6C-B8-OHc" id="Wre-qV-n6o"/>
                         <outlet property="minTempLabel" destination="M8F-b6-n48" id="zG5-xa-UTf"/>
                         <outlet property="skyImageView" destination="p2X-Zj-amo" id="J3d-1u-XJO"/>
+                        <outlet property="sunRiseLabel" destination="jiO-8v-NUT" id="DA0-Fm-dHW"/>
+                        <outlet property="sunSetLabel" destination="T1W-w2-Zci" id="mW0-gG-kEt"/>
                         <outlet property="tempLabel" destination="8Pe-x5-Ups" id="Zfi-ZV-GgN"/>
                         <outlet property="videoView" destination="nQw-do-W1Q" id="g0Q-ol-50Z"/>
                     </connections>
