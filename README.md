@@ -2,8 +2,8 @@
 
 # Weathery iOS App
 Elegant weather app which uses current location of device to show weather forecast<br><br>
-<img src="https://user-images.githubusercontent.com/30840527/61297925-e65c9300-a7fa-11e9-8a77-8aa4e822ed88.png" width="250">
-<img src="https://user-images.githubusercontent.com/30840527/61297935-ee1c3780-a7fa-11e9-8358-7af88960a06b.png" width="250">
+<img src="https://user-images.githubusercontent.com/30840527/61550529-532c9300-aa70-11e9-8aff-4a417f50abd0.png" width="250">
+<img src="https://user-images.githubusercontent.com/30840527/61550535-56c01a00-aa70-11e9-9a5b-9f18b708d693.png" width="250">
 
 ## Features
 - Background Image updates according to current time. like, morning sky from 6 am to 11 am.
